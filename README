@@ -1,0 +1,15 @@
+cbor.
+
+Turns CBOR into JSON or JSON into CBOR.
+Accepts either a filename or piped things.
+
+cat file.json | cbor > file.cbor
+cat file.cbor | cbor > file.json
+cbor file.json > file.cbor
+cbor file.cbor > file.json
+
+Good to use along with jq.
+Besides converting keys to strings, it doesn't do anything fancy, so it will probably fail if your CBOR has things that don't fit well with JSON it will throw an error.
+
+To compile from source and install, type `go get github.com/fiatjaf/cbor`.
+Or grab a binary from Releases, chmod +x it and put it in your $PATH.
